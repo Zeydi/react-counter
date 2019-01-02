@@ -4,14 +4,19 @@ import Navbar from "./components/navbar";
 import Counters from "./components/counters";
 
 class App extends Component {
-  state = {
-    counters: [
-      { id: 1, value: 2 },
-      { id: 2, value: 0 },
-      { id: 3, value: 0 },
-      { id: 4, value: 0 }
-    ]
-  };
+  constructor() {
+    super(props);
+    this.state = {
+      counters: [
+        { id: 1, value: 2 },
+        { id: 2, value: 0 },
+        { id: 3, value: 0 },
+        { id: 4, value: 0 }
+      ]
+    };
+  }
+  componentDidMount() {}
+
   handleIncrement = counter => {
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
